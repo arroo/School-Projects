@@ -1,0 +1,37 @@
+
+CS 349 A5 Marking Scheme
+Marker: Ankit Kamal
+
+Total marks:
+95/110
+
+
+
+Basic requirements
+[5/5] Compiles and runs on Android
+
+
+Desktop application changes
+[10/10] Desktop app modified to save animations which can be copied to android and used by app
+
+
+Android application 
+[15/15] Loads animations using a basic file dialog
+
+device orientation not handled.
+
+[35/35] Plays an animation on Android (any animation, even a pre-packaged animation that you automatically load from the apk directory)
+
+[20/20] Allows change in frame rate and background colour for the animation using a second activity
+
+
+
+
+Enhancements
+[10/15] Example: perfectly reimplement A3 functionality (i.e. drawing, erasing, selecting and moving)
+
+zooming and slider for animation
+
+
+Bonus
+[0/10] Use of your own A3 codebase
