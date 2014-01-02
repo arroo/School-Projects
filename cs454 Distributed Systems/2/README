@@ -1,2 +1,0 @@
-'make all' or even 'make' will compile stringServer and stringClient
-tested compiling and running, both at home and on linux028 (and connecting between the two sites)
