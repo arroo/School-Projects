@@ -1,0 +1,1000 @@
+  998  make
+  999  ./binder
+ 1000  make
+ 1001  ./binder
+ 1002  make
+ 1003  ./binder
+ 1004  cd 454/repo/cs454-a3/
+ 1005  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1006  make client2
+ 1007  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1008  make client2
+ 1009  make client
+ 1010  rm client
+ 1011  make client
+ 1012  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1013  make client2
+ 1014  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1015  make client
+ 1016  rm client
+ 1017  make client
+ 1018  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1019  rm client
+ 1020  make client
+ 1021  ./client
+ 1022  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1023  make
+ 1024  rm client
+ 1025  make client
+ 1026  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1027  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1028  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1029  rm client
+ 1030  make client
+ 1031  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1032  make
+ 1033  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1034  cd ../client/
+ 1035  g++ -c client1.c 
+ 1036  g++ -L. client1.o -lrpc -o client
+ 1037  ls
+ 1038  BINDER_ADDRESS=localhost BINDER_PORT=59327 ./client
+ 1039  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1040  cd ../cs454-a3/
+ 1041  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./client
+ 1042  make binder
+ 1043  make client
+ 1044  BINDER_ADDRESS=localhost BINDER_PORT=45718 ./client
+ 1045  BINDER_ADDRESS=localhost BINDER_PORT=45178 ./client
+ 1046  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1047  cd 454/repo/cs454-a3/
+ 1048  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1049  git pull
+ 1050  git status
+ 1051  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1052  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1053  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1054  cd ../server/
+ 1055  g++ -L. server.o -lrpc -o server
+ 1056  g++ -L. server.o server_functions.o server_function_skels.o -lrpc -o server
+ 1057  BINDER_ADDRESS=localhost BINDER_PORT=59327 ./server
+ 1058  cd ../cs454-a3/
+ 1059  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1060  make server
+ 1061  BINDER_ADDRESS=localhost BINDER_PORT=45178 ./server
+ 1062  cd 454/repo/cs454-a3/
+ 1063  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1064  git commit -a -m "made more progress, terminating works properly, added some error checking to timing of functions"
+ 1065  git push
+ 1066  git commit -a -m "minor changes"
+ 1067  git push
+ 1068  git status
+ 1069  make clean
+ 1070  git status
+ 1071  rem *~
+ 1072  rm *~
+ 1073  git status
+ 1074  git add client2.c
+ 1075  git checkout -- binder.c binder.h server_stuff.c
+ 1076  git pull
+ 1077  git commit -a -m "blub"
+ 1078  git pull
+ 1079  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1080  git pull
+ 1081  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1082  git status
+ 1083  make clean
+ 1084  git status
+ 1085  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1086  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1087  git commit -a -m "function redefinition removes old skeleton from database, made server and binder care about the status of each other (but the binder needs work, there is a todo)"
+ 1088  git push
+ 1089  git pull
+ 1090  git commit -a -m "function redefinition removes old skeleton from database, made server and binder care about the status of each other (but the binder needs work, there is a todo)"
+ 1091  git push
+ 1092  BINDER_ADDRESS=localhost BINDER_PORT=5000 ./server
+ 1093  git commit -a -m "minor amount of prettifying and made it so that large argtypes can be sent to server"
+ 1094  git push
+ 1095  git add README
+ 1096  git add "system manual.docx"
+ 1097  git commit -a -m "I think that's almost it"
+ 1098  git push
+ 1099  cd 454/repo/cs454-a3/
+ 1100  ls
+ 1101  git pull
+ 1102  git add "system manual.pdf"
+ 1103  git push
+ 1104  git commit -a -m "added pdf, all that's left is prettifying"
+ 1105  git push
+ 1106  make client
+ 1107  cd 454/repo/cs454-a3/
+ 1108  make client
+ 1109  BINDER_ADDRESS=localhost BINDER_PORT=42275 ./client
+ 1110  git commit -a -m "prettified and added to the system manual"
+ 1111  git push
+ 1112  git commit -a -m "prettified and added to the system manual"
+ 1113  git push
+ 1114  cd 454/repo/cs454-a3/
+ 1115  make server
+ 1116  BINDER_ADDRESS=localhost BINDER_PORT=42275
+ 1117  BINDER_ADDRESS=localhost BINDER_PORT=42275 ./server
+ 1118  cd 454/repo/cs454-a3/
+ 1119  ls
+ 1120  make clean
+ 1121  ls
+ 1122  rm *~
+ 1123  ls
+ 1124  make
+ 1125  ./binder
+ 1126  cd examples/
+ 1127  java *.java
+ 1128  javac *.java
+ 1129  ls
+ 1130  java Main_1 
+ 1131  cd mc
+ 1132  cd mvc
+ 1133  javac ./model/*.java ./view/*.java *.java
+ 1134  ls
+ 1135  java Main_1
+ 1136  cd cs349/3c
+ 1137  make run
+ 1138  cd 3
+ 1139  cd a3
+ 1140  make run
+ 1141  java Sketch 
+ 1142  make run
+ 1143  cd a3
+ 1144  make run
+ 1145  cd a3
+ 1146  make run
+ 1147  make clean
+ 1148  cd model
+ 1149  gedit Thing.java
+ 1150  cd ..
+ 1151  make run
+ 1152  clr
+ 1153  clear
+ 1154  make run
+ 1155  ls
+ 1156  cd a3
+ 1157  ls
+ 1158  make
+ 1159  make ri
+ 1160  make run
+ 1161  cd a5
+ 1162  make
+ 1163  make run
+ 1164  cd a5
+ 1165  make run
+ 1166  cd a5
+ 1167  make run
+ 1168  cd a5
+ 1169  make
+ 1170  make run
+ 1171  make
+ 1172  java Sketch
+ 1173  make run
+ 1174  make
+ 1175  make runb
+ 1176  make run
+ 1177  make
+ 1178  make run
+ 1179  make
+ 1180  make run
+ 1181  cd a5
+ 1182  make
+ 1183  make run
+ 1184  make runb
+ 1185  make run
+ 1186  cd a5
+ 1187  make run
+ 1188  cd a5
+ 1189  make clean
+ 1190  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1191  exit
+ 1192  cd a5
+ 1193  make run
+ 1194  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1195  exit
+ 1196  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1197  exit
+ 1198  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1199  exit
+ 1200  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1201  exit
+ 1202  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1203  exit
+ 1204  cd a5
+ 1205  make clean
+ 1206  make run
+ 1207  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1208  cd a3
+ 1209  make run
+ 1210  cd ../a5
+ 1211  ls
+ 1212  make run
+ 1213  cd a1
+ 1214  ls
+ 1215  ./alien
+ 1216  cd crib
+ 1217  make
+ 1218  make run
+ 1219  [A
+ 1220  make run
+ 1221  xkill
+ 1222  make run
+ 1223  xkill
+ 1224  cd crib
+ 1225  make run
+ 1226  java Crib
+ 1227  make run
+ 1228  cd crib
+ 1229  ls
+ 1230  java Crib
+ 1231  ll
+ 1232  cd crib
+ 1233  make run
+ 1234  java Crib
+ 1235  make run
+ 1236  cd crib
+ 1237  make run
+ 1238  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1239  exit
+ 1240  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1241  fgfd
+ 1242  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1243  exit
+ 1244  java Main
+ 1245  cd crib3
+ 1246  java Main
+ 1247  cd crib3
+ 1248  make run
+ 1249  java Main
+ 1250  javac a4.java
+ 1251  javac ClassViewer.java 
+ 1252  java ClassViewer 
+ 1253  javac ClassViewer.java 
+ 1254  java ClassViewer 
+ 1255  javac ClassViewer.java 
+ 1256  java ClassViewer 
+ 1257  javac ClassViewer.java 
+ 1258  java ClassViewer 
+ 1259  javac ClassViewer.java 
+ 1260  java ClassViewer 
+ 1261  javac ClassViewer.java 
+ 1262  java ClassViewer 
+ 1263  javac ClassViewer.java 
+ 1264  java ClassViewer 
+ 1265  javac ClassViewer.java 
+ 1266  java ClassViewer 
+ 1267  javac ClassViewer.java 
+ 1268  java ClassViewer 
+ 1269  ls
+ 1270  cd Downloads/
+ 1271  ls
+ 1272  javac db2jcc4.jar 
+ 1273  javac -cp db2jcc4.jar 
+ 1274  cd..
+ 1275  cd .
+ 1276  cd ..
+ 1277  javac ClassViewer.java 
+ 1278  java ClassViewer 
+ 1279  javac ClassViewer.java -cp db2jcc4.jar -cp db2jcc_license_cu.jar 
+ 1280  java ClassViewer 
+ 1281  java ClassViewer -cp db2jcc4.jar -cp db2jcc_license_cu.jar 
+ 1282  javac ClassViewer.java -cp db2jcc4.jar -cp db2jcc_license_cu.jar 
+ 1283  java ClassViewer -cp db2jcc4.jar -cp db2jcc_license_cu.jar 
+ 1284  javac ClassViewer.java -cp db2jcc4.jar -cp db2jcc_license_cu.jar 
+ 1285  java ClassViewer -cp db2jcc4.jar -cp db2jcc_license_cu.jar 
+ 1286  sudo gedit
+ 1287  javac ClassViewer.java 
+ 1288  java ClassViewer
+ 1289  javac ClassViewer.java 
+ 1290  java ClassViewer
+ 1291  javac ClassViewer.java 
+ 1292  java ClassViewer
+ 1293  ls
+ 1294  java ClassViewer
+ 1295  sudo gedit
+ 1296  java ClassViewer
+ 1297  ssh mmagyar@linux028.student.cs.uwaterloo.ca
+ 1298  exit
+ 1299  ssh mmagyar@linux028.student.cs.uwaterloo.ca
+ 1300  kill
+ 1301  taskkill
+ 1302  xkill
+ 1303  ssh mmagyar@linux028.student.cs.uwaterloo.ca
+ 1304  exit
+ 1305  cd ex
+ 1306  ls
+ 1307  java Main_1
+ 1308  javac Main_1.java
+ 1309  javac ./model/*.java ./view/*.java Main_1.java
+ 1310  java Main_1.java
+ 1311  java Main_1
+ 1312  sudo gedit
+ 1313  java Main_1 -cp .
+ 1314  java -cp . Main_1
+ 1315  javac ./model/*.java ./view/*.java Main_2.java
+ 1316  java -cp . Main_2
+ 1317  javac ./model/*.java ./view/*.java Main_3.java
+ 1318  java -cp . Main_3
+ 1319  javac ./model/*.java ./view/*.java Main_4.java
+ 1320  java -cp . Main_4
+ 1321  javac ./model/*.java ./view/*.java Main_5.java
+ 1322  java -cp . Main_5
+ 1323  cd ../examples/event/
+ 1324  javac Main_1.java 
+ 1325  javac *.java
+ 1326  java -cp . Main_1
+ 1327  cd examples/event/
+ 1328  java -cp . Main_1
+ 1329  cd examples/event/
+ 1330  java -cp . Main_1
+ 1331  ssh mmagyar@linux028.student.cs.uwaterloo.ca
+ 1332  exit
+ 1333  ls
+ 1334  javac *.java
+ 1335  java ClassViewer 
+ 1336  java -cp db2jcc4.jar -cp db2jcc_license_cu.jar ClassViewer
+ 1337  java -cp db2jcc4.jar -cp db2jcc_license_cu.jar -cp . ClassViewer
+ 1338  java -cp . -cp db2jcc4.jar -cp db2jcc_license_cu.jar ClassViewer
+ 1339  java
+ 1340  java -cp . db2jcc4.jar db2jcc_license_cu.jar ClassViewer
+ 1341  ls
+ 1342  java
+ 1343  java -cp ".;./*" ClassViewer
+ 1344  java -cp "*;./*" ClassViewer
+ 1345  java -cp "./*;*" ClassViewer
+ 1346  java -cp "db2jcc_license_cu.jar:db2jcc4.jar:*" ClassViewer 
+ 1347  javac *.java
+ 1348  javac -cp "db2jcc_license_cu.jar:db2jcc4.jar:." *.java
+ 1349  java -cp "db2jcc_license_cu.jar:db2jcc4.jar:*" ClassViewer 
+ 1350  java -cp "db2jcc_license_cu.jar:db2jcc4.jar:./*" ClassViewer 
+ 1351  java -cp "db2jcc_license_cu.jar:db2jcc4.jar:./ClassViewer.class" ClassViewer 
+ 1352  java -cp "db2jcc_license_cu.jar:db2jcc4.jar:." ClassViewer 
+ 1353  cd workspace/
+ 1354  ls
+ 1355  cd 348\ A4/
+ 1356  ls
+ 1357  cd src/
+ 1358  LS
+ 1359  ls
+ 1360  javac *.java
+ 1361  ls
+ 1362  java -cp ".:db2cc4.jar:db2jcc_license_cu.jar" ClassViewer
+ 1363  java -cp "db2jcc_license_cu.jar:db2jcc4.jar:." ClassViewer 
+ 1364  make run
+ 1365  ssh mmagyar@linux028.student.cs.uwaterloo.ca
+ 1366  ping linux028.student.cs.uwaterloo.ca
+ 1367  ping google.ca
+ 1368  cd workspace/
+ 1369  ls
+ 1370  cd 348\ A4//src/
+ 1371  ls
+ 1372  make run
+ 1373  ls
+ 1374  make clean
+ 1375  ls
+ 1376  rm Makefile~
+ 1377  ls
+ 1378  cd workspace/
+ 1379  cs 348\ A4/
+ 1380  cd 348\ A4/
+ 1381  cd src/
+ 1382  make run
+ 1383  ping linux028.student.cs.uwaterloo.ca
+ 1384  cd workspace/348\ A4/src/
+ 1385  make run
+ 1386  ssh mmagyar@linux028.student.cs.uwaterloo.ca
+ 1387  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1388  ssh mmagyar@linux024.student.cs.uwaterloo.ca
+ 1389  cd workspace/348\ A4/src/
+ 1390  rename 
+ 1391  rename Makefile Makfile.txt
+ 1392  rename help
+ 1393  man rename
+ 1394  cd workspace/348\ A4/src/
+ 1395  mv Makefile Makefile.txt
+ 1396  ls
+ 1397  make run
+ 1398  cp Makefile.txt Makefile
+ 1399  ls
+ 1400  xkill
+ 1401  cd workspace/348\ A4/src/
+ 1402  make clean
+ 1403  make
+ 1404  exit
+ 1405  cd workspace/348\ A4/src/
+ 1406  make run
+ 1407  cd workspace/crib4/src/
+ 1408  java Main
+ 1409  cd workspace/crib4/src/
+ 1410  ls
+ 1411  javac *.java
+ 1412  java Main
+ 1413  javac *.java
+ 1414  java Main
+ 1415  javac *.java
+ 1416  java Main
+ 1417  javac *.java
+ 1418  java Main
+ 1419  javac *.java
+ 1420  java Main
+ 1421  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1422  exit
+ 1423  xkill
+ 1424  taskkill
+ 1425  kill
+ 1426  xkill
+ 1427  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1428  exit
+ 1429  xkill
+ 1430  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1431  ls
+ 1432  cd 458
+ 1433  ls
+ 1434  gcc submit.c -S -o submit.S
+ 1435  xkill
+ 1436  exit
+ 1437  gcc submit.c -S -o submit.S
+ 1438  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1439  exit
+ 1440  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1441  exit
+ 1442  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1443  exit
+ 1444  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1445  exit
+ 1446  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1447  exit
+ 1448  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1449  man execv
+ 1450  man ls
+ 1451  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1452  kprobe
+ 1453  kprobes
+ 1454  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1455  exit
+ 1456  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1457  exit
+ 1458  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1459  exit
+ 1460  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1461  exit
+ 1462  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1463  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1464  exit
+ 1465  ping 127.0.0.1:8080
+ 1466  ssh
+ 1467  ssh -L 8080:10.0.3.151:80 mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1468  telnet localhost:8080
+ 1469  telnet
+ 1470  curl --trace-ascii debugdump.txt http://localhost:8080/index.php
+ 1471  apt-get install curl
+ 1472  sudo apt-get install curl
+ 1473  curl --trace-ascii debugdump.txt http://localhost:8080/index.php
+ 1474  sudo apt-get install netcat
+ 1475  echo 
+ 1476  echo --help
+ 1477  echo -help
+ 1478  echo -e  "GET http://localhost:8080/index.php HTTP/1.1\n\n" | nc localhost 8080 | less
+ 1479  echo -e  "GET http://127.0.0.1:8080/index.php HTTP/1.1\n\n" | nc localhost 8080 | less
+ 1480  echo -e  "GET /index.php HTTP/1.1\n\n" | nc localhost 8080 | less
+ 1481  echo -e  "GET index.php HTTP/1.1\n\n" | nc localhost 8080 | less
+ 1482  echo -e  "GET /index.php HTTP/1.0\n\n" | nc localhost 8080 | less
+ 1483  echo -e  "GET /login.php HTTP/1.0\n\n" | nc localhost 8080 | less
+ 1484  man echo
+ 1485  cat command | echo -e | nc localhost 8080 | less
+ 1486  cat command
+ 1487  cat command | echo -e
+ 1488  cat command | echo 
+ 1489  cat command | echo -e
+ 1490  cat command | echo -ne
+ 1491  cat command | echo -e
+ 1492  cat command
+ 1493  cat command | echo
+ 1494  echo command
+ 1495  echo command | cat
+ 1496  echo command | cat command
+ 1497  echo | cat command
+ 1498  echo -e |cat command | nc localhost 8080 | less
+ 1499  echo -e | cat command | nc localhost 8080 | less
+ 1500  echo -e  "POST /login.php HTTP/1.0\n\n" | nc localhost 8080 | less
+ 1501  echo -e  "POST /login.php HTTP/1.0\nusername=bob\npassword=password1" | nc localhost 8080 | less
+ 1502  echo -e  "POST /login.php HTTP/1.0\nusername=bob\npassword=password1\n\n" | nc localhost 8080 | less
+ 1503  cat command | nc localhost 8080 | less
+ 1504  cat command
+ 1505  cat command | nc localhost 8080 | less
+ 1506  cat command
+ 1507  cat command | nc localhost 8080 | less
+ 1508  curl
+ 1509  man curl
+ 1510  curl --form "username=bob&password=password1"
+ 1511  curl --form "username=bob&password=password1" http://localhost:8080
+ 1512  curl --form "username=bob&password=password1" http://localhost:8080/login.php
+ 1513  curl --form "username=bob&password=password1&form=login&submit=Login" http://localhost:8080/login.php
+ 1514  curl --form "username=bob&password=password1&form=login&submit=Login" http://localhost:8080/post.php
+ 1515  cat command | nc localhost 8080 | less
+ 1516  curl --form "username=bob&password=password1&form=login&submit=Login" http://localhost:8080/post.php
+ 1517  curl --form "username=bob&password=password1&form=login&submit=Logi" http://localhost:8080/post.php
+ 1518  curl --form "username=bob&password=password1&form=lgin&submit=Login" http://localhost:8080/post.php
+ 1519  curl --form "username=bob&password=password1" http://localhost:8080/post.php
+ 1520  curl --form "username=bob&password=password1" http://localhost:8080/login.php
+ 1521  cat command | nc localhost 8080 | less
+ 1522  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1523  ssh -L 8080:10.0.3.151:80 mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1524  telnet 127.0.0.1 8080
+ 1525  cat command | nc localhost 8080 | less
+ 1526  nmap localhost 8080
+ 1527  pof
+ 1528  p0f
+ 1529  curl  http://localhost:8080/vote.php?uid=[0-8]&id=1&vote=1
+ 1530  curl  http://localhost:8080/vote.php?id=1&vote=1&uid=[0-9]
+ 1531  cat command | nc localhost 8080 | less
+ 1532  curl http://localhost:8080/vote.php?id=1&vote=1&uid=[0-9]
+ 1533  cat command | nc localhost 8080 | less
+ 1534  curl --form "hash=[00000000-ffffffff]" http://localhost:8080/confirm.php
+ 1535  curl -L --form "hash=[00000000-ffffffff]" http://localhost:8080/confirm.php
+ 1536  curl -L --data "hash=[00000000-ffffffff]" http://localhost:8080/confirm.php
+ 1537  curl -L --data "hash=[00000000-99999999]" http://localhost:8080/confirm.php
+ 1538  curl -L --data "hash=[00000000-99999999]" --trace-ascii debugdump.txt http://localhost:8080/confirm.php
+ 1539  cat command | nc localhost 8080 | less
+ 1540  ssh -L 8080:10.0.3.151:80 mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1541  curl -c localhost:8080/vote.php?id=1&vote=1&uid=[1-9]
+ 1542  curl -c cookiejar localhost:8080/vote.php?id=1&vote=1&uid=[1-9]
+ 1543  cat command | nc localhost 8080 | less
+ 1544  ./sploit.sh localhost 8080
+ 1545  cp command command.txt
+ 1546  ./sploit.sh localhost 8080
+ 1547  chmod -777 sploit.sh
+ 1548  chmod 777 sploit.sh
+ 1549  ./sploit.sh localhost 8080
+ 1550  cd /bin
+ 1551  ls
+ 1552  cd home
+ 1553  cd
+ 1554  ls
+ 1555  ./sploit.sh localhost 8080
+ 1556  curl -c cookiejar 127.0.0.1:8080/confirm.php?hash=[00000000-00009999]
+ 1557  curl -c cookiejar 127.0.0.1:8080/confirm.php?hash=1
+ 1558  curl -c cookiejar 127.0.0.1:8080/confirm.php?hash=[0-99999999a-f]{8}
+ 1559  curl -c cookiejar 127.0.0.1:8080/confirm.php?hash=[00000000-99999999a-f]{8}
+ 1560  gcc sploit2.c -o ou t
+ 1561  gcc sploit2.c -o out
+ 1562  ./out
+ 1563  gcc sploit2.c -o out
+ 1564  ./out
+ 1565  gcc sploit2.c -o out
+ 1566  ./out
+ 1567  gcc sploit2.c -o out
+ 1568  ./out
+ 1569  gcc sploit2.c -o out
+ 1570  ./out
+ 1571  gcc sploit2.c -o out
+ 1572  ./out
+ 1573  gcc sploit2.c -o out
+ 1574  ./out
+ 1575  gcc sploit2.c -o out
+ 1576  ./out
+ 1577  gcc sploit2.c -o out
+ 1578  ./out
+ 1579  gcc sploit2.c -o out
+ 1580  ./out
+ 1581  gcc sploit2.c -o out
+ 1582  ./out
+ 1583  curl -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000
+ 1584  cat sploit2.txt
+ 1585  curl 127.0.0.1:8080/confirm.php?hash=00000000
+ 1586  curl -L -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000
+ 1587  curl -L -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000 | grep guest
+ 1588  curl -L -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000 | grep Welcome, *!
+ 1589  curl -L -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000 | grep 'Welcome, *!'
+ 1590  curl -L -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000 | grep 'Welcome, \*!'
+ 1591  curl -L -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000 | grep Welcome,*!
+ 1592  curl -L -c cookiejar 127.0.0.1:8080/confirm.php?hash=00000000 | grep Welcome,
+ 1593  ssh -L 8080:10.0.3.151:80 mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1594  curl -L -c cookiejar --data "title=sex&type=1&form=content&submit=Post" 127.0.0.1:8080/post.php
+ 1595  curl -L -c cookiejar --data "comment=good%20gravy&form=comment&submit=Post&parent=4" 127.0.0.1:8080/post.php
+ 1596  curl -L -c cookiejar --data "comment=good%20gravy&form=comment&submit=Post&parent=8" 127.0.0.1:8080/post.php
+ 1597  curl -L -c cookiejar --data "username=bob&password=password1&form=login&submit=Login" 127.0.0.1:8080/login.php
+ 1598  curl -L -c cookiejar 127.0.0.1:8080/index.php
+ 1599  curl -L -b cookiejar 127.0.0.1:8080/index.php
+ 1600  curl ftp://bob:password1@127.0.0.1:8080
+ 1601  curl -u sharvey:s3cr3tPW 127.0.0.1:8080/login.php
+ 1602  curl -u sharvey:s3cr3tPW 127.0.0.1:8080/post.php
+ 1603  curl -L -u sharvey:s3cr3tPW 127.0.0.1:8080/post.php
+ 1604  curl -L -c cookiejar -u sharvey:s3cr3tPW 127.0.0.1:8080/post.php
+ 1605  curl --data "username=sharvey&password=s3cr3tPW&form=login&submit=Login" -L -c cookiejar 127.0.0.1:8080/post.php
+ 1606  chmod 777 sploit2.
+ 1607  chmod 777 sploit2.sh
+ 1608  ./sploit2.sh
+ 1609  ./sploit2.sh 127.0.0.1 8080
+ 1610  cd shit/
+ 1611  ls
+ 1612  tar sploit.sh
+ 1613  tar --help
+ 1614  tar cvf sploit2.tar sploit.sh 
+ 1615  ls
+ 1616  cd ..
+ 1617  curl --data "password=s3cr3tPW&username=sharvey&form=login&submit=Login" -L -c cookiejar 127.0.0.1:8080/post.p
+ 1618  curl --data "password=s3cr3tPW&username=sharvey&form=login&submit=Login" -L -c cookiejar 127.0.0.1:8080/post.php
+ 1619  sploit.sh
+ 1620  ./sploit.sh 127.0.0.1 8080
+ 1621  cd shit/
+ 1622  ls
+ 1623  ./sploit.sh 127.0.0.1 8080
+ 1624  tar cvf sploit3.tar sploit.sh 
+ 1625  cd ..
+ 1626  curl -L -c cookiejar --data "comment=hello&form=comment&parent=1&submit=Post&title=Title&content=good%20stuff&username=rhenry&password=whatever" 127.0.0.1:8080/post.php
+ 1627  curl -L -c cookiejar --data "comment=hello&form=comment&parent=1&submit=Login&title=Title&content=good%20stuff&username=rhenry&password=whatever" 127.0.0.1:8080/post.php
+ 1628  curl -L -c cookiejar --data "username=admin" 127.0.0.1:8080/login.php
+ 1629  curl -L -c cookiejar --data "username=admin" 127.0.0.1:8080/post.php
+ 1630  curl -L -c cookiejar --data "username=rhenry\" 127.0.0.1:8080/post.php
+ 1631  fdsf
+ 1632  curl -L -c cookiejar --data "username" 127.0.0.1:8080/post.php
+ 1633  cat names
+ 1634  chmod 777 try.sh
+ 1635  ./try.sh
+ 1636  gcc sploit2.c -o out
+ 1637  ./out
+ 1638  gcc sploit2.c -o out
+ 1639  ./out
+ 1640  curl 127.0.0.1:8080
+ 1641  curl -L -c cookiejar --data "form=login" 127.0.0.1:8080
+ 1642  curl 127.0.0.1:8080/post.php
+ 1643  curl -L --data "title=Title&content=spork&type=1&form=content" -u rhenry:password 127.0.0.1:8080/post.php
+ 1644  ls
+ 1645  curl -L --data "title=Title&content=spork&type=1&form=content" -u rhenry:password 127.0.0.1:8080/post.php -trace-ascii -
+ 1646  curl -L --data "title=Title&content=spork&type=1&form=content" -u rhenry:password 127.0.0.1:8080/post.php -trace-ascii dump
+ 1647  curl -L --data "title=Title&content=spork&type=1&form=content" --trace-ascii dump  -u rhenry:password 127.0.0.1:8080/post.php
+ 1648  sudo gedit
+ 1649  ssh -L 8080:10.0.3.151:80 mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1650  fdfdsfds
+ 1651  ssh -L 8080:10.0.3.151:80 mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1652  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1653  exit
+ 1654  curl -L -c cookiejar --trace-ascii dump.txt --data "username=bob&password=passw0rd&form=login" 127.0.0.1:8080
+ 1655  curl -L -c cookiejar --trace-ascii dump.txt --data "username=bob&password=passw0rd&form=login" 127.0.0.1:8080/post.php
+ 1656  curl -L -c cookiejar --trace-ascii dump.txt --data "username=bob&password=passw0rd&form=login&submit=Login" 127.0.0.1:8080/post.php
+ 1657  curl -L -c cookiejar --trace-ascii dump.txt --data "username=bob&password=password1&form=login&submit=Login" 127.0.0.1:8080/post.php
+ 1658  ./sploit.sh 127.0.0.1 8080
+ 1659  man tar
+ 1660  tar cvf sploit1.tar sploit.sh
+ 1661  ls
+ 1662  gcc fibonacci.c -o fib
+ 1663  ./out
+ 1664  ./fib
+ 1665  gcc fibonacci.c -o fib
+ 1666  ./fib
+ 1667  ./fib 35
+ 1668  ./fib 40
+ 1669  ./fib 400
+ 1670  gcc fibonacci.c -o fib
+ 1671  ./fib 40
+ 1672  ./fib 
+ 1673  gcc fibonacci.c -o fib
+ 1674  ./fib 
+ 1675  ssh mmagyar@ugster05.student.cs.uwaterloo.ca
+ 1676  cd 458
+ 1677  cd 3
+ 1678  ls
+ 1679  rm Anonymizer.java
+ 1680  ls
+ 1681  g++ anonymizer.cc -o out
+ 1682  gcc anonymizer.c -o out
+ 1683  ./out
+ 1684  gcc anonymizer.c -o out
+ 1685  ./out
+ 1686  gcc anonymizer.c -o out
+ 1687  ./out
+ 1688  gcc anonymizer.c -o out
+ 1689  ./out
+ 1690  gcc anonymizer.c -o out
+ 1691  ./out
+ 1692  gcc anonymizer.c -o out
+ 1693  ./out
+ 1694  gcc anonymizer.c -o out
+ 1695  ./out
+ 1696  gcc anonymizer.c -o out
+ 1697  ./out
+ 1698  gcc anonymizer.c -o out
+ 1699  ./out
+ 1700  gcc anonymizer.c -o out
+ 1701  ./out
+ 1702  gcc anonymizer.c -o out
+ 1703  ./out
+ 1704  gcc anonymizer.c -o out
+ 1705  ./out
+ 1706  gcc anonymizer.c -o out
+ 1707  ./out
+ 1708  gcc anonymizer.c -o out
+ 1709  ./out
+ 1710  gcc anonymizer.c -o out
+ 1711  ./out
+ 1712  gcc anonymizer.c -o out
+ 1713  ./out
+ 1714  gcc anonymizer.c -o out
+ 1715  ./out
+ 1716  gcc anonymizer.c -o out
+ 1717  ./out
+ 1718  gcc anonymizer.c -o out
+ 1719  ./out
+ 1720  gcc anonymizer.c -o out
+ 1721  ./out
+ 1722  gcc anonymizer.c -o out
+ 1723  ./out
+ 1724  gcc anonymizer.c -o out
+ 1725  ./out
+ 1726  gcc anonymizer.c -o out
+ 1727  ./out
+ 1728  gcc anonymizer.c -o out
+ 1729  ./out
+ 1730  sha1
+ 1731  sha1sum
+ 1732  sha1sum Infectious_Disease_Record.csv 
+ 1733  gcc anonymizer.c -o out
+ 1734  ./out
+ 1735  gcc anonymizer.c -o out
+ 1736  ./out
+ 1737  gcc anonymizer.c -o out
+ 1738  ./out
+ 1739  gcc anonymizer.c -o out
+ 1740  ./out
+ 1741  gcc anonymizer.c -o out
+ 1742  ./out
+ 1743  sha1sum anonymized.csv.1
+ 1744  gcc anonymizer.c -o out
+ 1745  ./out
+ 1746  gcc anonymizer.c -o out
+ 1747  ./out
+ 1748  gcc anonymizer.c -o out
+ 1749  ./out
+ 1750  gcc anonymizer.c -o out
+ 1751  ./out
+ 1752  gcc anonymizer.c -o out
+ 1753  ./out
+ 1754  gcc anonymizer.c -o out
+ 1755  ./out
+ 1756  gcc anonymizer.c -o out
+ 1757  ./out
+ 1758  gcc anonymizer.c -o out
+ 1759  ./out
+ 1760  gcc anonymizer.c -o out
+ 1761  ./out
+ 1762  gcc anonymizer.c -o out
+ 1763  ./out
+ 1764  gcc anonymizer.c -o out
+ 1765  ./out
+ 1766  gcc anonymizer.c -o out
+ 1767  ./out
+ 1768  gcc anonymizer.c -o out
+ 1769  ./out
+ 1770  gcc anonymizer.c -o out
+ 1771  ./out
+ 1772  gcc anonymizer.c -o out
+ 1773  ./out
+ 1774  gcc anonymizer.c -o out
+ 1775  ./out
+ 1776  gcc anonymizer.c -o out
+ 1777  ./out
+ 1778  gcc anonymizer.c -o out
+ 1779  ./out
+ 1780  ssh mmagyar@student.cs.uwaterloo.ca
+ 1781  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1782  exit
+ 1783  cd 458/3
+ 1784  ./out
+ 1785  cd 458/3
+ 1786  gcc anonymizer.c -o out
+ 1787  cd 458/3
+ 1788  ./out
+ 1789  sha1sum anonymized.csv.2
+ 1790  cd 458/3
+ 1791  gcc anonymizer.c -o out
+ 1792  ./out
+ 1793  sha1sum anonymized.csv.3
+ 1794  gcc anonymizer.c -o out
+ 1795  ./out
+ 1796  sha1sum anonymized.csv
+ 1797  gcc anonymizer.c -o out
+ 1798  ./out
+ 1799  sha1sum non-kanonymized.csv
+ 1800  gcc anonymizer.c -o out
+ 1801  ./out
+ 1802  sha1sum non-kanonymized.csv
+ 1803  gcc anonymizer.c -o out
+ 1804  ./out
+ 1805  sha1sum non-kanonymized.csv
+ 1806  gcc anonymizer.c -o out
+ 1807  ./out
+ 1808  sha1sum anonymized.csv
+ 1809  gcc anonymizer.c -o out
+ 1810  ./out
+ 1811  sha1sum anonymized.csv
+ 1812  gcc anonymizer.c -o out
+ 1813  ./out
+ 1814  gcc anonymizer.c -o out
+ 1815  ./out
+ 1816  gcc anonymizer.c -o out
+ 1817  ./out
+ 1818  sha1sum anonymized.csv
+ 1819  gcc anonymizer.c -o out
+ 1820  ./out
+ 1821  sha1sum anonymized.csv
+ 1822  gcc anonymizer.c -o out
+ 1823  ./out
+ 1824  sha1sum anonymized.csv
+ 1825  gcc anonymizer.c -o out
+ 1826  ./out
+ 1827  sha1sum anonymized.csv
+ 1828  valgrind
+ 1829  sudo apt-get install valgrinf
+ 1830  sudo apt-get install valgrind
+ 1831  valgrind out
+ 1832  valgrind ./out
+ 1833  gcc anonymizer.c -o out
+ 1834  valgrind ./out
+ 1835  valgrind ./out --leak-check=full
+ 1836  valgrind --leak-check=full ./out
+ 1837  valgrind --leak-check=full --show-reachable=yes ./out
+ 1838  gcc anonymizer.c -o out
+ 1839  valgrind --leak-check=full --show-reachable=yes ./out
+ 1840  gcc kanonymizer.c -o out
+ 1841  ./out
+ 1842  sha1sum anonymized.csv.1
+ 1843  sha1sum anonymized.csv.2
+ 1844  sha1sum anonymized.csv.3
+ 1845  sha1sum anonymized.csv
+ 1846  sha1sum non-kanonymized.csv
+ 1847  make run
+ 1848  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1849  openssl
+ 1850  cd 458/3
+ 1851  ls
+ 1852  echo aaaaaaaa 100 100 > message
+ 1853  ls
+ 1854  openssl enc -aes-128-cbc -iv 0000000000000000000000000000000
+ 1855  openssl enc -aes-128-cbc -iv 0000000000000000000000000000000 -pass pass:password -in message -out ciphertext
+ 1856  od -x ciphertext
+ 1857  openssl enc -aes-128-cbc -iv 0000000000000000000000000000000 -pass pass:password -in message -out ciphertext
+ 1858  openssl enc -d -aes-128-cbc -iv 0000000000000000000000000000000 -pass pass:password -in ciphertext
+ 1859  xor
+ 1860  openssl enc -d -aes-128-cbc -iv 0000000000000000C0C000618001341 -pass pass:password -in ciphertext
+ 1861  openssl enc -d -aes-128-cbc -iv 0C0C0006180013410000000000000000 -pass pass:password -in ciphertext
+ 1862  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1863  exit
+ 1864  ssh mmagyar@linux.student.cs.uwaterloo.ca
+ 1865  exit
+ 1866  cd a1
+ 1867  ./alien
+ 1868  cd a3
+ 1869  ls
+ 1870  make run
+ 1871  cd ../a5
+ 1872  make run
+ 1873  cd ../a1
+ 1874  make run
+ 1875  cd a5final/
+ 1876  ls
+ 1877  cd a5
+ 1878  ls
+ 1879  cd ../a3
+ 1880  ls
+ 1881  make run
+ 1882  ls
+ 1883  cd a5final/
+ 1884  cd a3
+ 1885  ls
+ 1886  make run
+ 1887  make
+ 1888  make run
+ 1889  java Sketch
+ 1890  cd ../../
+ 1891  cd gitschool/School-Projects/cs454\ Distributed\ Systems/cs454-a3/
+ 1892  ./server cs349-Virtualbox 5000
+ 1893  export BINDER=cs349-Virtualbox
+ 1894  export BINDER_ADDRESS=cs349-Virtualbox
+ 1895  export BINDER_PORT=5000
+ 1896  ./server
+ 1897  cd gitschool/School-Projects/cs454\ Distributed\ Systems/cs454-a3/
+ 1898  ls
+ 1899  ./client
+ 1900  export BINDER_PORT=5000
+ 1901  export BINDER_ADDRESS=cs349-Virtualbox
+ 1902  ./client
+ 1903  cd gitschool/School-Projects/cs454\ Distributed\ Systems/cs454-a3/
+ 1904  export BINDER_PORT=5000
+ 1905  export BINDER_ADDRESS=127.0.0.1
+ 1906  ./client
+ 1907  ./client2
+ 1908  ./client
+ 1909  git add .
+ 1910  git add *
+ 1911  ./client
+ 1912  git add *
+ 1913  cd gitschool/School-Projects/cs454\ Distributed\ Systems/cs454-a3/
+ 1914  make
+ 1915  ./binder
+ 1916  make
+ 1917  ./binder
+ 1918  make
+ 1919  ./binder
+ 1920  make
+ 1921  ./binder
+ 1922  make
+ 1923  ./binder
+ 1924  make
+ 1925  ./binder
+ 1926  make
+ 1927  ./binder
+ 1928  make
+ 1929  ./binder
+ 1930  make
+ 1931  ./binder
+ 1932  make
+ 1933  ./binder
+ 1934  make
+ 1935  ./binder
+ 1936  make
+ 1937  ./binder
+ 1938  exit
+ 1939  git
+ 1940  md gitschool
+ 1941  mkdir gitschool
+ 1942  cd gitschool/
+ 1943  git init
+ 1944  git clone
+ 1945  git init
+ 1946  git clone git://github.com/mozesmagyar/School-Projects.git
+ 1947  ls
+ 1948  cd School-Projects/
+ 1949  ls
+ 1950  cd cs458\ Computer\ Security\ and\ Privacy/
+ 1951  cd 1
+ 1952  ls
+ 1953  git add *
+ 1954  git push
+ 1955  cd ..
+ 1956  git clone https://github.com/mozesmagyar/School-Projects.git
+ 1957  cd School-Projects/cs458\ Computer\ Security\ and\ Privacy/1
+ 1958  git add *
+ 1959  git push
+ 1960  git commit -a -m "first commit"
+ 1961  git push
+ 1962  git add assignment1.pdf
+ 1963  git commit -a -m "added assignment1.pdf commit"
+ 1964  git push
+ 1965  cd ../3
+ 1966  git add *
+ 1967  cd ../..
+ 1968  cd cs349\ User\ Interfaces/
+ 1969  ls
+ 1970  cd 1/A5
+ 1971  ls
+ 1972  rm a5marks.txt~
+ 1973  git add .
+ 1974  git commit -a -m "added cs349 a5"
+ 1975  git push
+ 1976  git commit -a -m "added cs349 a5 - the right ones"
+ 1977  cd ..
+ 1978  cd !
+ 1979  cd ~
+ 1980  cd gitschool/School-Projects/cs454\ Distributed\ Systems/
+ 1981  ls
+ 1982  cd cs454-a3/
+ 1983  ls
+ 1984  make run binder
+ 1985  make
+ 1986  ./binder
+ 1987  diff call.c rpccall.c 
+ 1988  export BINDER_PORT=5000
+ 1989  export BINDER_ADDRESS=cs349-Virtualbox
+ 1990  ./server
+ 1991  git commit -a -m "added cs454 a3"
+ 1992  cd gitschool/School-Projects/cs454\ Distributed\ Systems/
+ 1993  cd cs454-a3/
+ 1994  git push
+ 1995  git status
+ 1996  history
+ 1997  history > hist
