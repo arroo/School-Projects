@@ -1,14 +1,14 @@
 10
 
 dir
-5157
-svn://linux024.student.cs.uwaterloo.ca:6002/cs349-w13/mmagyar/A5/a3/model
+3944
+svn://linux024.student.cs.uwaterloo.ca:6002/cs349-w13/mmagyar/A3/model
 svn://linux024.student.cs.uwaterloo.ca:6002/cs349-w13
 
 
 
-2013-04-09T00:46:15.327775Z
-4777
+2013-03-19T02:10:28.186267Z
+3943
 mmagyar
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2013-04-09T00:58:26.250348Z
-fb94139bfeca3e031997d9c287b0f20c
-2013-04-09T00:46:15.327775Z
-4777
+2013-03-19T02:13:51.134020Z
+fc244b4766e83368ae9a6528cfa257d5
+2013-03-19T02:10:28.186267Z
+3943
 mmagyar
 
 
@@ -58,7 +58,7 @@ mmagyar
 
 
 
-4405
+3884
 
 Thing.class
 file
@@ -66,10 +66,10 @@ file
 
 
 
-2013-04-09T00:58:26.255344Z
-239ee8aa250d0ece4f24402412def727
-2013-04-09T00:46:15.327775Z
-4777
+2013-03-19T02:13:51.142017Z
+e68c08302f8003acdf6055855ac5ba88
+2013-03-19T02:10:28.186267Z
+3943
 mmagyar
 has-props
 
@@ -92,5 +92,5 @@ has-props
 
 
 
-5133
+4416
 

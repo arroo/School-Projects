@@ -6,20 +6,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
 import java.util.*;
-import java.io.*;
 import model.*;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
- 
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 
 public class Window extends JComponent {
@@ -46,9 +33,6 @@ public class Window extends JComponent {
     JSlider slide;
     int currentFrame;
     int numFrames;
-    int fps;
-    int wX,wY;
-    JFileChooser choose;
     
     public void setColour(Color in){
         if(in!=null)drawColour = in;
@@ -56,18 +40,14 @@ public class Window extends JComponent {
     }
     
     
-	public Window(int f, int sec, final int windowX, final int windowY, final javax.swing.Timer timer, final JSlider sl){
+	public Window(final int n, final int windowX, final int windowY, final javax.swing.Timer timer, final JSlider sl){
 	    slide = sl;
-	    wX=windowX;
-	    wY=windowY;
 	    drawColour = new Color(0);
 	    t = timer;
 	    inside = false;
 	    moving = new Boolean(false);
 	    selecting = false;
-	    numFrames = f*sec;
-	    fps = f;
-	    choose = new JFileChooser();
+	    numFrames = n;
 	    currentFrame = 0;
 	    things = new ArrayList<Thing>();
 	    colours = new ArrayList<Color>();
@@ -154,7 +134,6 @@ public class Window extends JComponent {
 			        break;
 			      case MOVE:
 			        t.stop();
-			        //mode = SELECT;
 			        moving = new Boolean(false);
 			        break;
 			      case DRAW:
@@ -265,7 +244,6 @@ public class Window extends JComponent {
 		}
 		clear();
 		for(int i = 0;i<things.size();i++){
-		    //System.out.println("thing:"+i+ " visible:"+things.get(i).getVisibility(currentFrame));
 		    if(things.get(i).getVisibility(currentFrame)) {
     		    //draw that bitch
     		    Point2D [] drawPoints = things.get(i).getPoints(currentFrame);
@@ -294,12 +272,7 @@ public class Window extends JComponent {
 		graphics2D.fillRect(0, 0, getSize().width, getSize().height);
 		graphics2D.setPaint(Color.black);
 	}
-	public void log(){
-	    for(int i=0;i<things.size();i++){
-	        System.out.println("Start Log: "+i);
-	        things.get(i).log();
-	    }
-	}
+	
 	public void pickFrame(int i){
 	    if (moving.booleanValue()==false&&mode==MOVE) {
 	        selectBox = null;
@@ -315,145 +288,5 @@ public class Window extends JComponent {
 	    if(i<numFrames)
     	    currentFrame = i;
     	repaint();
-	}
-	
-	public void goodSave(File f){
-	    try {
-	        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-	        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-	        Document doc = docBuilder.newDocument();
-	        Element rootElement = doc.createElement("animation");
-	        doc.appendChild(rootElement);
-	        
-	        Element next = doc.createElement("fps");
-	        next.appendChild(doc.createTextNode(Integer.toString(fps)));
-	        rootElement.appendChild(next);
-	        
-	        next = doc.createElement("frames");
-	        next.appendChild(doc.createTextNode(Integer.toString(numFrames)));
-	        rootElement.appendChild(next);
-	        
-	        Element size = doc.createElement("size");
-	        rootElement.appendChild(size);
-	        next = doc.createElement("X");
-	        next.appendChild(doc.createTextNode(Integer.toString(wX)));
-	        size.appendChild(next);
-	        next = doc.createElement("Y");
-	        next.appendChild(doc.createTextNode(Integer.toString(wY)));
-	        size.appendChild(next);
-	        
-	        for(int i=0;i<things.size();i++){
-	            Element thing = doc.createElement("thing");
-	            rootElement.appendChild(thing);
-	            
-	            Element base = doc.createElement("colour");
-	            thing.appendChild(base);
-	            base.setAttribute("R",Integer.toString(colours.get(i).getRed()));
-	            base.setAttribute("G",Integer.toString(colours.get(i).getGreen()));
-	            base.setAttribute("B",Integer.toString(colours.get(i).getBlue()));
-	            
-	            base = doc.createElement("base");
-	            thing.appendChild(base);
-	            Point2D [] p = things.get(i).getPoints(0);
-	            for(int j=0;j<p.length;j++){
-	                next = doc.createElement("x");
-	                next.setAttribute("num",Integer.toString(j));
-	                next.appendChild(doc.createTextNode( Integer.toString((int)p[j].getX()) ));
-	                base.appendChild(next);
-	                next = doc.createElement("y");
-	                next.setAttribute("num",Integer.toString(j));
-	                next.appendChild(doc.createTextNode( Integer.toString((int)p[j].getY()) ));
-	                base.appendChild(next);
-	            }
-	            
-	            base = doc.createElement("transforms");
-	            thing.appendChild(base);
-	            for(int j=0;j<numFrames;j++) {
-	                next = doc.createElement("t");
-	                next.setAttribute("frame",Integer.toString(j));
-	                double [] values = new double[6];
-	                things.get(i).getAbs(j).getMatrix(values);
-	                next.setAttribute("v",(things.get(i).getVisibility(j)==true?"true":"false"));
-	                next.setAttribute("m00",Double.toString(values[0]));
-	                next.setAttribute("m10",Double.toString(values[1]));
-	                next.setAttribute("m01",Double.toString(values[2]));
-	                next.setAttribute("m11",Double.toString(values[3]));
-	                next.setAttribute("m02",Double.toString(values[4]));
-	                next.setAttribute("m12",Double.toString(values[5]));
-	                
-	                base.appendChild(next);
-	            }
-	            
-	        }
-	        
-	        
-	        
-	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-	        Transformer transformer = transformerFactory.newTransformer();
-	        DOMSource source = new DOMSource(doc);
-	        StreamResult result = new StreamResult(f);
-	        transformer.transform(source,result);
-	        
-	    } catch (ParserConfigurationException e) {
-	        e.printStackTrace();
-	    } catch (TransformerException e) {
-	        e.printStackTrace();
-	    }
-	    /*try {
-	        f.createNewFile();
-	        BufferedWriter out = new BufferedWriter(new FileWriter(f), 32768);
-	        StringBuilder s = new StringBuilder("<animation>\n");
-	        s.append("<fps>60</fps>\n<frames>"+numFrames+"</frames>\n");
-	        for(int i=0;i<things.size();i++){
-	            s.append("<thing>\n");
-	            s.append("<colour>\n<red>"+colours.get(i).getRed()+"</red><green>"+colours.get(i).getGreen()+"</green><blue>"+colours.get(i).getBlue()+"</blue>");
-	            s.append("</colour>\n<base>\n");
-	            Point2D [] p = things.get(i).getPoints(0);
-	            for(int j=0;j<p.length;j++){
-	                s.append("<x>"+p[j].getX()+"</x><y>"+p[j].getY()+"</y>\n");
-	            }
-	            s.append("</base>\n<transforms>\n");
-	            for(int j=0;j<numFrames;j++) {
-	                double [] values = new double[7];
-	                things.get(i).getAbs(j).getMatrix(values);
-	                s.append("<t m00=\""+values[0]+"\" m10=\""+values[1]+"\" m01=\""+values[2]+"\" m11=\""+values[3]+"\" m02=\""+values[4]+"\" m12=\""+values[0]+"></t>\n");
-	            }
-	            s.append("</transforms>\n<visibility>\n");
-	            for(int j=0;j<numFrames;j++) {
-	                s.append("<v>"+things.get(i).getVisibility(j)+"</v>\n");
-	            }
-	            s.append("</visibility>\n</thing>\n");
-	        }	        
-	        s.append("</animation>");
-	        out.write(s.toString());
-	        out.close();
-	    } catch (IOException e) {}
-	    catch (SecurityException e) {}*/
-	}
-	
-	public void save(Container c){
-	 
-	    if(choose.showSaveDialog(c)==JFileChooser.APPROVE_OPTION){
-	        File f = choose.getSelectedFile();
-	        if(f.exists()){
-	            //System.out.println("file exists");
-	            int val = JOptionPane.showConfirmDialog(null,"'"+f.getName()+"' already exists\n do you want to replace it?","File Exists",JOptionPane.YES_NO_OPTION);
-	            if(val==JOptionPane.YES_OPTION){
-	                f.delete();
-	                goodSave(f);
-	            } else {
-	                save(c);
-	            }
-	        } else {
-	            goodSave(f);
-	        } 
-	        //f.close();
-	    }
-	}
-	public void load(Container c){
-	    
-	    if(choose.showOpenDialog(c)==JFileChooser.APPROVE_OPTION){
-	        
-	    }
 	}
 }

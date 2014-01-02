@@ -32,21 +32,11 @@ public class Thing {
         xs.add(x);
         ys.add(y);
     }
-    public void log(){
-        //System.out.println("in log");
-        for(int i=0;i<visible.size();i++){
-            System.out.println(
-                "i:" + i +
-                " v:" + visible.get(i) +
-                " s:" + sequential.get(i) +
-                " a:" + absolute.get(i) 
-            );
-        }
-    }
+    
     public void addFrame(int n){
-        sequential.add(n,new AffineTransform());
-        absolute.add(n,(AffineTransform)absolute.get(n).clone());
-        visible.add(n,new Boolean(visible.get(n).booleanValue()));
+        sequential.add(n+1,new AffineTransform());
+        absolute.add(n+1,(AffineTransform)absolute.get(n).clone());
+        visible.add(n+1,new Boolean(visible.get(n).booleanValue()));
     }
     
     public boolean touches(Point2D in, int n) {
@@ -109,7 +99,6 @@ public class Thing {
     }
     
     public void move(int x, int y, int n){
-        //System.out.println("s:"+sequential.size()+" a:"+absolute.size());
         for(int i=n+1;i<sequential.size();i++)
             sequential.get(i).setToIdentity();
         sequential.get(n).translate(x,y);
@@ -123,10 +112,6 @@ public class Thing {
         }
         for(i=n;i<absolute.size();i++)
             absolute.get(i).setTransform(abs);
-    }
-    public AffineTransform getAbs(int n){
-        AffineTransform at = new AffineTransform(absolute.get(n));
-        return at;
     }
     
 }
